@@ -6,7 +6,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 
   entry: {
-    index: './src/index.tsx'
+    index: './src/index.jsx'
   },
 
   // to automatically finds the local tsconfig
@@ -14,7 +14,7 @@ module.exports = {
 
   resolve: {
     // That's what allow us to leave off the file extension when importing (import { something } from './file')
-    extensions: [".ts", ".tsx", ".js"]
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
   },
 
   output: {
@@ -28,6 +28,12 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loader: 'awesome-typescript-loader'
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env','@babel/preset-react'] },
       },
       {
         test: /\.(png|jpe?g|gif)$/,
@@ -46,13 +52,16 @@ module.exports = {
   plugins: [
     new WebpackBar(),
     new CleanWebpackPlugin(),
-    new CopyPlugin([
-      {
-        context: path.resolve(__dirname, '../../../node_modules/@we'),
-        from: '*/dist/assets/**',
-        to: 'assets/[folder]/[name].[ext]'
-      },
-    ])
+    /*new CopyPlugin({
+      patterns: [
+        {
+          from: "**!/!*",
+          to: "[path][name].[contenthash][ext]",
+          context: path.resolve(__dirname, '../../../node_modules/@fta')
+        },
+      ],
+    }),*/
+
   ]
 
 };

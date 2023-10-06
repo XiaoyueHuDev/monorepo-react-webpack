@@ -1,14 +1,14 @@
 const path = require('path');
-const webpackMerge = require('webpack-merge');
-const devConfig = require('@we/dev-tools/config/webpack.dev');
+const { merge } = require('webpack-merge');
+const devConfig = require('@fta/dev-tools/config/webpack.dev');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const localDevConfig = require('./webpack.dev');
 
 delete localDevConfig.externals;
 
-module.exports = webpackMerge(devConfig, localDevConfig, {
+module.exports = merge(devConfig, localDevConfig, {
   entry: {
-    index: './src/index-dev.tsx'
+    index: './src/index-dev.jsx'
   },
   plugins: [
     new HtmlWebpackPlugin({
