@@ -5,4 +5,5 @@ module.exports = {
   'react-dom': 'react-dom',
   '@fta/app-a': '@fta/app-a',
   '@fta/app-b': '@fta/app-b',
+  '@fta/add-d' : '@fta/add-d',
 };
