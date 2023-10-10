@@ -6,9 +6,12 @@
 
   },
   "scripts": {
-    "start": "@fta/base-config start.js",
-    "build": "@fta/base-config build",
-    "test": "node @fta/base-config/scripts/test.js"
+    "start": "node ../base-config/scripts/start.js",
+    "build": "node ../base-config/scripts/build.js",
+    "test": "node ../base-config/scripts/test.js"
+  },
+  "devDependencies": {
+    "@fta/dev-tools": "1.0.0"
   },
   "eslintConfig": {
     "extends": [
