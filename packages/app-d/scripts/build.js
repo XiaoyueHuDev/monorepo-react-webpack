@@ -1,0 +1,1 @@
+const devConfig = require('@fta/dev-tools/config/webpack.dev');
