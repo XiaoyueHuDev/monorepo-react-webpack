@@ -16,9 +16,8 @@ Feel free to ask and make PR's 👍
 * Cygwin in case you are running this project on a windows machine
 
 ## Packages
-* `app-a`, and `app-b`: These two packages are like business modules. You can dev and run them standalone but in the production they are instantiated by the `root-app`;
-* `root-app`: The main app. This app provides infrastructure to all modules via React Context API like the <Theme/> . Also, it handles the routing at its first level;
-* `dev-tools`: A shared module that provides tooling and general config.
+* `app-d`, and `app-e`: These two packages are like business modules. You can dev and run them standalone but in the production they are instantiated by the `root-app`;
+* `base-config`: A shared module that provides tooling and general config.
 
 
 ## Setup
@@ -33,19 +32,12 @@ $ sh scripts/build.sh
 ```
 > If all goes well your browser will open and show you a report of how webpack split the code like this:
 > 
-> ![terminal result](./readme-assets/report.png "Terminal result")
+> 
 
-
-## Running
-```
-$ yarn http-server
-```
-> Open your browser on http://localhost:8080. If you wanna see the lazy loading in action look at the networking 
-
-## Running `App-A` and `App-B` standalone
+## Running `App-D` and `App-E` standalone
 You can run the business modules standalone in dev mode.
 ```
-$ cd packages/app-a
+$ cd packages/app-d
 $ yarn start
 ```
 > Live reloading is enabled
