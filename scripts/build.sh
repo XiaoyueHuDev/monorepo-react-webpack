@@ -1,13 +1,10 @@
 #!/bin/bash
 
 
-cd ./packages/app-a
+cd ./packages/app-d
 yarn build
 
-cd ../app-b
+cd ../app-e
 yarn build
-
-cd ../root-app
-yarn build:prod
 
 read
